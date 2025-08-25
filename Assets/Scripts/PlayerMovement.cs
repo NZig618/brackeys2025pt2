@@ -6,16 +6,33 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float rotSpeed = 5f;
     public Rigidbody2D rb;
     Vector2 moveDirection;
+    [SerializeField] private InputActionReference movement, pointerPosition, attack;
+    [Header("Shooting Settings")]
     public float gunHeat;
-    public float cooloown = 0.25f;
+    public float cooldown = 0.25f;
+    [Header("Health Settings")]
+    public int maxHealth = 100;
+    public int currentHealth;
+    [Header("Invincibility Settings")]
+    [SerializeField] private float invincibilityDuration = 1f;
+    private float invincibilityTimer = 0f;
+    private bool isInvincible = false;
+    private Color originalColor;
+    private Color flashColor = new Color(1f, 0f, 0f, 0.5f);
+    private SpriteRenderer spriteRenderer;
 
-    [SerializeField]
-    private InputActionReference movement, pointerPosition, attack;
 
+    void Start()
+    {
+        currentHealth = maxHealth;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -23,14 +40,24 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
         OrientMouse();
 
-        if (gunHeat > 0) {
+        if (gunHeat > 0)
+        {
             gunHeat -= Time.deltaTime;
         }
 
         if (attack.action.ReadValue<float>() == 1 && gunHeat <= 0)
         {
-            gunHeat = cooloown;
+            gunHeat = cooldown;
             Fire();
+        }
+        if (isInvincible)
+        {
+            invincibilityTimer -= Time.deltaTime;
+            if (invincibilityTimer <= 0)
+            {
+                isInvincible = false;
+                spriteRenderer.color = originalColor;
+            }
         }
     }
 
@@ -49,5 +76,35 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        var obstacleController = collision.gameObject.GetComponent<ObstacleCollisionController>();
+        if (obstacleController != null)
+        {
+            TakeDamage(obstacleController.damage);
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        isInvincible = true;
+        invincibilityTimer = invincibilityDuration;
+        // Flash effect to indicate damage
+        spriteRenderer.color = flashColor;
+        
+    }
+    
+    void Die()
+    {
+        // Handle player death (e.g., reload scene, show game over screen)
+        Debug.Log("Player Died!");
+        //Destroy(gameObject);
     }
 }

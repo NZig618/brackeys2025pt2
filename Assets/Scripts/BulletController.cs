@@ -1,0 +1,19 @@
+using UnityEngine;
+
+public class BulletController : MonoBehaviour
+{
+    public int damage = 20;
+    public float lifetime = 2f;
+
+    void Start()
+    {
+        
+    }
+
+    public void Explode()
+    {
+        // Add explosion effects here (e.g., particle effects, sound)
+        Destroy(gameObject);
+    }
+    
+}
