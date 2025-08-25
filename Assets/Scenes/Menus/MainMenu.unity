@@ -893,11 +893,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 789683697527713470, guid: b4847a0e316cfe34a9daa4c0a2865e10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 468.18726
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 789683697527713470, guid: b4847a0e316cfe34a9daa4c0a2865e10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 393.59103
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 789683697527713470, guid: b4847a0e316cfe34a9daa4c0a2865e10, type: 3}
       propertyPath: m_LocalPosition.z
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 1963373076}
   - component: {fileID: 1963373075}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
