@@ -4,7 +4,7 @@ using Unity.VisualScripting.InputSystem;
 using UnityEngine.Assertions.Comparers;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
