@@ -18,8 +18,32 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Credits.unity
     guid: 8e2dc0ddb29df334fa5b57caba50a552
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/House/House1.unity
+    guid: 9be5523a2086618429bdb85eda45b77c
+  - enabled: 1
+    path: Assets/Scenes/House/House2.unity
+    guid: 61da3ae52e3cba14c831181fb68a9eb1
+  - enabled: 1
+    path: Assets/Scenes/House/House3.unity
+    guid: 751c2fb2cb68c594591ad1bfc3931019
+  - enabled: 1
+    path: Assets/Scenes/Town/Town1.unity
+    guid: 7829827a4c3ad9d45afb5f890df7f1f9
+  - enabled: 1
+    path: Assets/Scenes/Town/Town2.unity
+    guid: d30e1903c9f200946b7ffd51840f66fa
+  - enabled: 1
+    path: Assets/Scenes/Town/Town3.unity
+    guid: d66a1451024fa1f4e987fc7963ddb21f
+  - enabled: 1
+    path: Assets/Scenes/Park/Park1.unity
+    guid: c527f92a0c0fcba4c9248d4e7ebbcd34
+  - enabled: 1
+    path: Assets/Scenes/Park/Park2.unity
+    guid: eab9f717715b050499751e0318cf39e4
+  - enabled: 1
+    path: Assets/Scenes/Park/Park3.unity
+    guid: 483c2bd97d2099f4192cb0ba19094bd7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
