@@ -6,9 +6,16 @@ public class SceneChanger : MonoBehaviour
 {
 
     [SerializeField] public float fadeDuration;
+
+    [SerializeField] string nextLevel = "Credits";
+
     public SceneFade sceneFade;
 
     public GameObject pauseCanvas;
+
+    public GameObject winCanvas;
+
+    public GameObject deathCanvas;
 
     private IEnumerator Start()
     {
@@ -46,5 +53,25 @@ public class SceneChanger : MonoBehaviour
     {
         pauseCanvas.SetActive(false);
         ContinueGame();
+    }
+
+    public void LevelComplete()
+    {
+        winCanvas.SetActive(true);
+    }
+
+    public void NextLevel()
+    {
+        ChangeScene(nextLevel);
+    }
+
+    public void GameOver()
+    {
+        deathCanvas.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        ChangeScene(SceneManager.GetActiveScene().name);
     }
 }

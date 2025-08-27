@@ -5,12 +5,11 @@ public class GoalController : MonoBehaviour
 {
     //Can likely be removed once "LevelComplete" overlay can be activated
     [SerializeField] SceneChanger sceneChanger;
-    [SerializeField] String nextLevel = "Credits";
 
     public void FinishLevel()
     {
         //Add logic to activate "LevelComplete" overlay
-        sceneChanger.ChangeScene(nextLevel);
+        sceneChanger.LevelComplete();
     }
 
     public void CollectTreat()
