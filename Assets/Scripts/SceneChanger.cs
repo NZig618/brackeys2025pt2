@@ -8,6 +8,8 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] public float fadeDuration;
     public SceneFade sceneFade;
 
+    public GameObject pauseCanvas;
+
     private IEnumerator Start()
     {
         yield return sceneFade.FadeInCoroutine(fadeDuration);
@@ -22,5 +24,27 @@ public class SceneChanger : MonoBehaviour
     public void ChangeScene(string sceneToLoad)
     {
         StartCoroutine(LoadSceneCoroutine(sceneToLoad));
+    }
+
+    private void StopGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    private void ContinueGame()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void Pause()
+    {
+        StopGame();
+        pauseCanvas.SetActive(true);
+    }
+
+    public void Unpause()
+    {
+        pauseCanvas.SetActive(false);
+        ContinueGame();
     }
 }
