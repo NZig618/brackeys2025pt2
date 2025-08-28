@@ -3173,6 +3173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 789683697527713470}
   - component: {fileID: 5713452597281373686}
+  - component: {fileID: 8608191109141780892}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3220,6 +3221,24 @@ MonoBehaviour:
   pauseCanvas: {fileID: 2431629573063106760}
   winCanvas: {fileID: 3378870448630545409}
   deathCanvas: {fileID: 7822803493075123568}
+--- !u!114 &8608191109141780892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8526925168752391161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8ed83945486e548bb555b059c74ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  xThreshold: 2
+  minX: -100
+  maxX: 100
+  minY: -100
+  maxY: 100
 --- !u!1 &8708865208962811183
 GameObject:
   m_ObjectHideFlags: 0
