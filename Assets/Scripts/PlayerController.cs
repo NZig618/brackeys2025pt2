@@ -7,14 +7,16 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
-    public float rotSpeed = 5f;
-    public Rigidbody2D rb;
-    Vector2 moveDirection;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private Rigidbody2D rb;
+    private Vector2 moveDirection;
     [SerializeField] private InputActionReference movement, pointerPosition, attack;
     [Header("Shooting Settings")]
-    public float gunHeat;
-    public float cooldown = 0.25f;
+    [SerializeField] private float gunHeat;
+    [SerializeField] private float cooldown = 0.25f;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float fireForce = 20f;
     [Header("Health Settings")]
     public int maxHealth = 100;
     public int currentHealth;
@@ -67,10 +69,6 @@ public class PlayerController : MonoBehaviour
         Vector2 orientation = mousePos - rb.position;
         rb.rotation = Mathf.Atan2(orientation.y, orientation.x) * Mathf.Rad2Deg - 90f;
     }
-
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public float fireForce = 20f;
 
     void Fire()
     {
