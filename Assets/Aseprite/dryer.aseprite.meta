@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e58fabc9ca8ca5643bd22599e1644114
+guid: edad25c560e8bb34a8d8ee6c84c540e1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,8 +129,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: dryer
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 128
       height: 128
-    spriteID: eae1aee8251d39f41a9c9e7889a344e5
+    spriteID: 537941a8aa6d2fd47a5882366eb1cda0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 128
         height: 128
-      spriteId: eae1aee8251d39f41a9c9e7889a344e5
+      spriteId: 537941a8aa6d2fd47a5882366eb1cda0
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

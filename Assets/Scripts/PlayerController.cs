@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
 
     void TakeDamage(int damage)
     {
+        if (isInvincible) return;
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
