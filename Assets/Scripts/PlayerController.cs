@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] SceneChanger sceneChanger;
+
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private Rigidbody2D rb;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [Header("Health Settings")]
     public int maxHealth = 100;
     public int currentHealth;
+    
     [Header("Invincibility Settings")]
     [SerializeField] private float invincibilityDuration = 1f;
     private float invincibilityTimer = 0f;
@@ -104,6 +107,7 @@ public class PlayerController : MonoBehaviour
     {
         // Handle player death (e.g., reload scene, show game over screen)
         Debug.Log("Player Died!");
-        //Destroy(gameObject);
+        sceneChanger.GameOver();
+        gameObject.SetActive(false);
     }
 }
