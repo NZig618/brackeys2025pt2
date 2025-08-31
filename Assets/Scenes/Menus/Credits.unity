@@ -697,7 +697,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Design Team: \tNoah Ziglar, Tristin Moore, Starr Rathbone, \n\t\t\tLawrence
-    Stephenson\n\nMusic Sources:\tTODO\n\nSound Effects:\tTODO"
+    Stephenson\n\nMusic Sources:\tThe Entertainer\t- Scott Joplin\n\t\t\tPine Apple
+    Rag \t- Scott Joplin\n\n\t\tAll music was sourced through Wikimedia Commons"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
