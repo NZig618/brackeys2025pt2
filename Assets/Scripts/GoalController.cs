@@ -24,6 +24,7 @@ public class GoalController : MonoBehaviour
         {
             CollectTreat();
             FinishLevel();
+            collision.gameObject.SetActive(false);
         }
     }
 }
