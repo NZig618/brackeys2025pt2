@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class BulletController : MonoBehaviour
 {
@@ -7,7 +8,14 @@ public class BulletController : MonoBehaviour
 
     void Start()
     {
+        // Start a coroutine that waits then destroys
+        StartCoroutine(LifetimeRoutine());
+    }
 
+    private IEnumerator LifetimeRoutine()
+    {
+        yield return new WaitForSeconds(lifetime);
+        Explode();
     }
 
     public void Explode()
@@ -19,7 +27,7 @@ public class BulletController : MonoBehaviour
     //If object goes off screen, destroy without animating
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        Explode();
     }
     
 }
