@@ -18,13 +18,12 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            UpdateAudio();
         }
         else
         {
             Destroy(gameObject);
         }
-
-        UpdateAudio();
     }
 
     void Update()
