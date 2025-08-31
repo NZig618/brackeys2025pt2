@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -37,12 +38,12 @@ public class AudioManager : MonoBehaviour
 
         if (ArrayUtility.Contains(menuScenes, scene.name))
         {
-            // if menu music is not playing when it should be
+            // current scene is a menu
             PlayMusic(menuMusic);
         }
         else
         {
-            // if level music is not playing when it should be 
+            // current scene is a level
             PlayMusic(levelMusic);
         }
 
@@ -50,6 +51,7 @@ public class AudioManager : MonoBehaviour
 
     private void PlayMusic(AudioClip clip)
     {
+        // if the correct music is already playing skip this
         if (!(audioSource.clip == clip && audioSource.isPlaying))
         {
             audioSource.clip = clip;
@@ -57,5 +59,4 @@ public class AudioManager : MonoBehaviour
             audioSource.Play();
         }
     }
-
 }
