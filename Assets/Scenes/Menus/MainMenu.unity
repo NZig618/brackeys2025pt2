@@ -284,6 +284,11 @@ MonoBehaviour:
   audioSource: {fileID: 470043664}
   menuMusic: {fileID: 8300000, guid: 9c6560a280b11da4298a001a547f1b28, type: 3}
   levelMusic: {fileID: 8300000, guid: a1a48afe7c8706c4b9f348452403e476, type: 3}
+  menuScenes:
+  - MainMenu
+  - LevelSelect
+  - Credits
+  - ControlMenu
 --- !u!4 &470043663
 Transform:
   m_ObjectHideFlags: 0
