@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,10 +12,15 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip menuMusic;
     public AudioClip levelMusic;
-    public string[] menuScenes = { "MainMenu", "LevelSelect", "Credits", "ControlMenu" };
+    public List<string> menuScenes;
 
     private void Awake()
     {
+        menuScenes.Add("MainMenu");
+        menuScenes.Add("LevelSelect");
+        menuScenes.Add("Credits");
+        menuScenes.Add("ControlMenu");
+
         if (instance == null)
         {
             instance = this;
@@ -36,7 +42,7 @@ public class AudioManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if (ArrayUtility.Contains(menuScenes, scene.name))
+        if (menuScenes.Contains(scene.name))
         {
             // current scene is a menu
             PlayMusic(menuMusic);
